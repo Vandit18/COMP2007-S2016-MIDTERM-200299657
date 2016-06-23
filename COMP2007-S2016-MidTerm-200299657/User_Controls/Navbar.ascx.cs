@@ -5,11 +5,15 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
 /**
- * @author: Tom Tsiliopoulos
- * @date: June 23, 2016
- * @version: 0.0.3 - updated SetActivePage Method to include Todo List
- */
+ @author: Vandit Kothari
+    @date: June 23,2016 
+    @Website Name : http://comp2007-s2016-midterm-200299657.azurewebsites.net/
+    @updated SetActivePage Method to include Todo List
+    @version = 1.0
+*/
+
 
 namespace COMP2007_S2016_MidTerm_200299657
 {

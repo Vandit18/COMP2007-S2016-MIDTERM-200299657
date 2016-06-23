@@ -8,6 +8,15 @@ using System.Web.UI.WebControls;
 using System.Web.ModelBinding;
 using System.Linq.Dynamic;
 
+/**
+ @author: Vandit Kothari
+    @date: June 23,2016 
+    @Website Name : http://comp2007-s2016-midterm-200299657.azurewebsites.net/
+    @This is a TodoList page. which will show all the todos to user who 
+    access this site.
+    @version = 1.0
+*/
+
 namespace COMP2007_S2016_MidTerm_200299657
 {
     public partial class TodoList : System.Web.UI.Page
@@ -15,12 +24,12 @@ namespace COMP2007_S2016_MidTerm_200299657
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // if loading the page for the first time, populate the dept grid
+            // if loading the page for the first time, populate the Todo grid
             if (!IsPostBack)
             {
                 Session["SortColumn"] = "TodoID"; // default sort column
                 Session["SortDirection"] = "ASC";
-                // Get the student data
+                // Get the Todo data
                 this.GetTodo();
             }
         }
@@ -52,7 +61,7 @@ namespace COMP2007_S2016_MidTerm_200299657
 
             using (TodoConnection db = new TodoConnection())
             {
-                // create object of the Department class and store the query string inside of it
+                // create object of the Todo class and store the query string inside of it
                 Todo deletedTodo = (from todoRecords in db.Todos
                                                 where todoRecords.TodoID == TodoID
                                                 select todoRecords).FirstOrDefault();

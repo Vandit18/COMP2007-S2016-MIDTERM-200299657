@@ -6,6 +6,17 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
+
+/**
+ @author: Vandit Kothari
+    @date: June 23,2016 
+    @Website Name : http://comp2007-s2016-midterm-200299657.azurewebsites.net/
+    @This is a TodoDetail page. which will show specific todo if edited 
+    or can insert new todo.
+    @version = 1.0
+*/
+
+
 namespace COMP2007_S2016_MidTerm_200299657
 {
     public partial class TodoDetails : System.Web.UI.Page
@@ -25,12 +36,12 @@ namespace COMP2007_S2016_MidTerm_200299657
             // connect to the EF DB
             using (TodoConnection db = new TodoConnection())
             {
-                // populate a Department object instance with the DepartmentID from the URL Parameter
+                // populate a Todo object instance with the TodoID from the URL Parameter
                 Todo updatedTodo = (from Todos in db.Todos
                                                 where Todos.TodoID == TodoID
                                                 select Todos).FirstOrDefault();
 
-                // map the Department properties to the form controls
+                // map the Todo properties to the form controls
                 if (updatedTodo != null)
                 {
                     TodoNameTextBox.Text = updatedTodo.TodoName;
@@ -48,7 +59,7 @@ namespace COMP2007_S2016_MidTerm_200299657
         }
         protected void CancelButton_Click(object sender, EventArgs e)
         {
-            // Redirect back to Departments page
+            // Redirect back to Todolist page
             Response.Redirect("~/TodoList.aspx");
         }
 
@@ -67,7 +78,7 @@ namespace COMP2007_S2016_MidTerm_200299657
                     // get the id from the URL
                     TodoID = Convert.ToInt32(Request.QueryString["TodoID"]);
 
-                    // get the current student from EF DB
+                    // get the current Todo from EF DB
                     newTodo = (from Todo in db.Todos
                                      where Todo.TodoID == TodoID
                                      select Todo).FirstOrDefault();
