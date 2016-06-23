@@ -35,7 +35,14 @@ namespace COMP2007_S2016_MidTerm_200299657
                 {
                     TodoNameTextBox.Text = updatedTodo.TodoName;
                     TodoNotesTextBox.Text = updatedTodo.TodoNotes;
-
+                    if (updatedTodo.Completed == true)
+                    {
+                        todoCheckBox.Checked = true;
+                    }
+                    else
+                    {
+                        todoCheckBox.Checked = false;
+                    }
                 }
             }
         }
@@ -69,8 +76,14 @@ namespace COMP2007_S2016_MidTerm_200299657
                 // add form data to new record
                 newTodo.TodoName = TodoNameTextBox.Text;
                 newTodo.TodoNotes = TodoNotesTextBox.Text;
-
-
+                if (todoCheckBox.Checked == true)
+                {
+                    newTodo.Completed = true;
+                }
+                else
+                {
+                    newTodo.Completed = false;
+                }
 
 
                 if (TodoID == 0)
@@ -86,5 +99,10 @@ namespace COMP2007_S2016_MidTerm_200299657
                 Response.Redirect("~/TodoList.aspx");
             }
             }
+
+        protected void todoCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
