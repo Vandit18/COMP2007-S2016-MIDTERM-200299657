@@ -26,8 +26,8 @@
                      OnSorting="TodoGridView_Sorting" OnRowDataBound="TodoGridView_RowDataBound"
                     PagerStyle-CssClass="pagination-ys">
                     <Columns>
-                        <asp:BoundField DataField="TodoName" HeaderText="Todo" Visible="true" SortExpression="tName" />
-                        <asp:BoundField DataField="TodoNotes" HeaderText="Notes" Visible="true" SortExpression="tNotes" />
+                        <asp:BoundField DataField="TodoName" HeaderText="Todo" Visible="true" SortExpression="TodoName" />
+                        <asp:BoundField DataField="TodoNotes" HeaderText="Notes" Visible="true" SortExpression="TodoNotes" />
                         
                         <asp:HyperLinkField HeaderText="Edit" Text="<i class='fa fa-pencil-square-o fa-lg'></i> Edit" 
                             NavigateUrl="~/TodoDetails.aspx.cs" ControlStyle-CssClass="btn btn-primary btn-sm" runat="server"
