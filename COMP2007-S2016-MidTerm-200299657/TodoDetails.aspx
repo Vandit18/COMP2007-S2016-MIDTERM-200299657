@@ -15,7 +15,7 @@
                     <asp:TextBox runat="server" TextMode="MultiLine" CssClass="form-control" ID="TodoNotesTextBox" placeholder="Todo Notes"></asp:TextBox>
                 </div>
                 <div class="form-group">
-                <asp:CheckBox runat="server" ID="todoCheckBox" AutoPostBack="true" OnCheckedChanged="todoCheckBox_CheckedChanged" />
+                <asp:CheckBox runat="server" ID="todoCheckBox" AutoPostBack="true" />
                 <asp:Label runat="server" ID="Done" Text="completed" Font-Size="Large"></asp:Label>
                     </div>
                 <div class="text-right">

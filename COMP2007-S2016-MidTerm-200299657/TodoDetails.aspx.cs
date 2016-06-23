@@ -78,7 +78,7 @@ namespace COMP2007_S2016_MidTerm_200299657
                 newTodo.TodoNotes = TodoNotesTextBox.Text;
                 if (todoCheckBox.Checked == true)
                 {
-                    newTodo.Completed = true;
+                    newTodo.Completed = todoCheckBox.Enabled;
                 }
                 else
                 {
@@ -100,9 +100,6 @@ namespace COMP2007_S2016_MidTerm_200299657
             }
             }
 
-        protected void todoCheckBox_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }
