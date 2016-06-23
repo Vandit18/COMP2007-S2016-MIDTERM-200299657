@@ -12,9 +12,12 @@
                 </div>
                 <div class="form-group">
                     <label class="control-label" for="TodoNotesTextBox">Todo Notes</label>
-                    <asp:TextBox runat="server" CssClass="form-control" ID="TodoNotesTextBox" placeholder="Todo Notes" required="true"></asp:TextBox>
+                    <asp:TextBox runat="server" TextMode="MultiLine" CssClass="form-control" ID="TodoNotesTextBox" placeholder="Todo Notes"></asp:TextBox>
                 </div>
-                
+                <div class="form-group">
+                <asp:CheckBox runat="server" ID="todoCheckBox" />
+                <asp:Label runat="server" ID="Done" Text="completed" Font-Size="Large"></asp:Label>
+                    </div>
                 <div class="text-right">
                     <asp:Button Text="Cancel" ID="CancelButton" CssClass="btn btn-warning btn-lg" runat="server" 
                         UseSubmitBehavior="false" CausesValidation="false" OnClick="CancelButton_Click" />
